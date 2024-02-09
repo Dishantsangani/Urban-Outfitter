@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./Images/Favicon.png" type="image/x-icon">
+    <title>Register</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Barlow:ital@1&family=Montserrat&family=Open+Sans:ital,wght@1,300&family=Poppins:wght@400;700&family=Rethink+Sans&family=Roboto:wght@300&display=swap");
+      * {
+        font-family: "Roboto", sans-serif;
+      }
+      body {
+        margin: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border: 2px solid royalblue;
+        box-shadow: 15px 3px 7px rgb(110, 104, 104);
+        border-radius: 16px;
+        max-width: 350px;
+        background-color: #ecf0f1;
+        padding: 24px;
+        position: relative;
+      }
+
+      .title {
+        font-size: 28px;
+        color: royalblue;
+        font-weight: 600;
+        letter-spacing: -1px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding-left: 30px;
+      }
+
+      .title::before,
+      .title::after {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        left: 0px;
+        background-color: royalblue;
+      }
+
+      .title::before {
+        width: 18px;
+        height: 18px;
+        background-color: royalblue;
+      }
+
+      .title::after {
+        width: 18px;
+        height: 18px;
+        animation: pulse 1s linear infinite;
+      }
+      .message {
+        font-family: serif;
+        color: black;
+        text-shadow: 0 0 20px black;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .signin {
+        color: rgba(88, 87, 87, 0.822);
+        font-size: 14px;
+      }
+
+      .signin {
+        text-align: center;
+      }
+
+      .signin a {
+        color: royalblue;
+      }
+
+      .signin a:hover {
+        text-decoration: underline royalblue;
+      }
+
+      .flex {
+        display: flex;
+        width: 100%;
+        gap: 6px;
+      }
+
+      .form label {
+        position: relative;
+      }
+
+      .form label .input {
+        width: 100%;
+        padding: 9px 10px 20px 2px;
+        outline: 0;
+        border: 1px solid rgba(105, 105, 105, 0.397);
+        border-radius: 10px;
+      }
+
+      .form label .input + span {
+        position: absolute;
+        left: 10px;
+        top: 15px;
+        color: grey;
+        font-size: 0.9em;
+        cursor: text;
+        transition: 0.3s ease;
+      }
+
+      .form label .input:placeholder-shown + span {
+        top: 15px;
+        font-size: 0.9em;
+      }
+
+      .form label .input:focus + span,
+      .form label .input:valid + span {
+        top: 30px;
+        font-size: 0.7em;
+        font-weight: 600;
+      }
+
+      .form label .input:valid + span {
+        color: green;
+      }
+
+      #submit {
+        border: none;
+        outline: none;
+        background-color: royalblue;
+        padding: 10px;
+        border-radius: 10px;
+        color: #fff;
+        font-size: 16px;
+        transform: 0.3s ease;
+      }
+
+      .submit:hover {
+        background-color: rgb(56, 90, 194);
+      }
+
+      @keyframes pulse {
+        from {
+          transform: scale(0.9);
+          opacity: 1;
+        }
+
+        to {
+          transform: scale(1.8);
+          opacity: 0;
+        }
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <form class="form head" onsubmit="return validateForm()">
+      <p class="title">Register</p>
+      <p class="message">Welcome To Urban Outfitter</p>
+      <div class="flex">
+        <label>
+          <input type="text" class="input" required />
+          <span>Firstname</span>
+        </label>
+
+        <label>
+          <input type="text" class="input" required />
+          <span>Lastname</span>
+        </label>
+      </div>
+
+      <label>
+        <input type="email" class="input" required />
+        <span>Email</span>
+      </label>
+
+      <label>
+        <input id="pswd1" type="password" class="input" value="" required />
+        <span>Password</span>
+        <span id="message1" style="color: red"></span>
+      </label>
+      <label>
+        <input id="pswd2" type="password" class="input" required />
+        <span>Confirm password</span>
+        <span id="message2" style="color: red"></span>
+      </label>
+      <button type="submit" value="submit" id="submit" formaction="./Home.html">
+        Submit
+      </button>
+      <p class="signin">
+        Already have an acount ? <a href="./Sign-in.html">Signin</a>
+      </p>
+    </form>
+    <script src="./Js/Script.js"></script>
+  </body>
+</html>
